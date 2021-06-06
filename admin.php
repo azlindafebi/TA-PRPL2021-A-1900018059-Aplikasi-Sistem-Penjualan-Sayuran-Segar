@@ -73,7 +73,7 @@ include_once("koneksi.php");
 						<center>Tanggal</center>
 					</th>
 					<th>
-						<center>Nama Barang</center>
+						<center>Gambar Barang</center>
 					</th>
 					<th>
 						<center>Stock</center>
@@ -97,7 +97,7 @@ include_once("koneksi.php");
 			echo "<tr>";
 			echo "<td>" . $data['id'] . "</td>";
 			echo "<td>" . $data['tanggal'] . "</td>";
-			echo "<td>" . $data['nama_barang'] . "</td>";
+			echo "<td><center><img style='height: 80px; width:80px;' src='images/" . $data['gambar'] . "'></center></td>";
 			echo "<td>" . $data['stok'] . "</td>";
 			echo "<td>" . $data['harga'] . "</td>";
 

@@ -77,7 +77,7 @@ if (isset($_SESSION['pesan'])) {
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nama Produk</th>
-        <th scope="col">Harga</th>
+        <th scope="col">Gambar</th>
         <th scope="col">Stok</th>
         <th scope="col">Pembelian</th>
         <th scope="col">Aksi</th>
@@ -95,6 +95,7 @@ if (isset($_SESSION['pesan'])) {
           <tr>
             <th scope="row"><?= $no++; ?></th>
             <td><?= $dt['nama_barang']; ?></td>
+            <td><img style="height: 80px; width:80px;" src="<?= 'images/'.$dt['gambar'] ;   ?>"></td>
             <td><?= $dt['harga']; ?></td>
             <td><?= $dt['stok']; ?></td>
             <td width="106">
