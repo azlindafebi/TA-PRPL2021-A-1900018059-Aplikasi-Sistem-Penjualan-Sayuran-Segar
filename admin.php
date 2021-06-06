@@ -65,7 +65,7 @@ include_once("koneksi.php");
 		<br>
 		<div class="table-responsive">
 			<table class="table table-bordered table-striped table-hover">
-				<thead style="background: #5F9EA0">
+				<thead style="background: #5F9EA0; width:max-content">
 					<th>
 						<center>Kode Barang</center>
 					</th>
@@ -83,7 +83,8 @@ include_once("koneksi.php");
 					</th>
 					<th>
 						<center>Aksi</center>
-						</>
+						</th>
+						
 				</thead>
 		</div>
 		<?php

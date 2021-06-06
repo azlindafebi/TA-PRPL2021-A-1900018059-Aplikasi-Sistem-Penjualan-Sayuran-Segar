@@ -81,6 +81,7 @@ if (isset($_SESSION['pesan'])) {
         <th scope="col">Stok</th>
         <th scope="col">Pembelian</th>
         <th scope="col">Aksi</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
