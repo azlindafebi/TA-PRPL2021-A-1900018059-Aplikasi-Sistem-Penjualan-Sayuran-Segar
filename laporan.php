@@ -54,7 +54,7 @@ require_once 'header.php';
 		<tbody align="center">
 
 			<?php
-			$query = mysqli_query($conn, "SELECT * FROM tb_order");
+			$query = mysqli_query($conn, "SELECT * FROM tb_order ");
 			$no = 1;
 			while ($dt = $query->fetch_assoc()) :
 			?>

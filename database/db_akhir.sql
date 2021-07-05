@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Apr 2021 pada 15.31
+-- Waktu pembuatan: 05 Jul 2021 pada 19.05
 -- Versi server: 10.1.34-MariaDB
 -- Versi PHP: 7.2.7
 
@@ -85,7 +85,13 @@ INSERT INTO `tb_detail_order` (`id_detail`, `id_order`, `id_produk`, `pembelian`
 (19, 58, 12, 1, ''),
 (20, 59, 12, 1, ''),
 (21, 60, 12, 1, ''),
-(22, 61, 12, 1, '');
+(22, 61, 12, 1, ''),
+(23, 60, 12, 2, ''),
+(24, 60, 13, 2, ''),
+(25, 61, 12, 1, ''),
+(26, 61, 13, 2, ''),
+(27, 62, 14, 2, ''),
+(28, 62, 17, 2, '');
 
 -- --------------------------------------------------------
 
@@ -123,7 +129,7 @@ CREATE TABLE `tb_order` (
   `total_item` int(11) NOT NULL,
   `total_bayar` float NOT NULL,
   `tgl_transaksi` date NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` int(100) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -131,12 +137,15 @@ CREATE TABLE `tb_order` (
 --
 
 INSERT INTO `tb_order` (`id_order`, `total_item`, `total_bayar`, `tgl_transaksi`, `status`) VALUES
-(54, 2, 110000, '2021-01-21', ''),
-(55, 1, 55000, '2021-04-16', ''),
-(56, 1, 55000, '2021-04-17', ''),
-(57, 1, 55000, '2021-04-17', ''),
-(58, 1, 55000, '2021-04-17', ''),
-(59, 1, 55000, '2021-04-17', 'pending');
+(54, 2, 110000, '2021-01-21', 0),
+(55, 1, 55000, '2021-04-16', 0),
+(56, 1, 55000, '2021-04-17', 0),
+(57, 1, 55000, '2021-04-17', 0),
+(58, 1, 55000, '2021-04-17', 0),
+(59, 1, 55000, '2021-04-17', 0),
+(60, 4, 410000, '2021-07-05', 0),
+(61, 3, 355000, '2021-07-05', 0),
+(62, 4, 600000, '2021-07-05', 0);
 
 -- --------------------------------------------------------
 
@@ -149,19 +158,20 @@ CREATE TABLE `tb_produk` (
   `nama_barang` varchar(50) NOT NULL,
   `harga` float NOT NULL,
   `stok` int(11) NOT NULL,
-  `tanggal` date NOT NULL
+  `tanggal` date NOT NULL,
+  `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_produk`
 --
 
-INSERT INTO `tb_produk` (`id`, `nama_barang`, `harga`, `stok`, `tanggal`) VALUES
-(12, 'Sayur Kangkung', 55000, 10, '2021-01-22'),
-(13, 'Ikan Lele', 150000, 5, '2021-01-21'),
-(14, 'Daging Sapi', 250000, 5, '2021-01-19'),
-(15, 'Beras', 400000, 20, '2021-01-18'),
-(17, 'aji ', 50000, 5, '2021-04-18');
+INSERT INTO `tb_produk` (`id`, `nama_barang`, `harga`, `stok`, `tanggal`, `gambar`) VALUES
+(12, 'Sayur Kangkung', 55000, 10, '2021-01-22', 'kangkung.jpg'),
+(13, 'Ikan Lele', 150000, 5, '2021-01-21', 'lele.jpg'),
+(14, 'Daging Sapi', 250000, 5, '2021-01-19', 'daging.jpg'),
+(15, 'Beras', 400000, 20, '2021-01-18', 'beras.jpg'),
+(17, 'Brokoli', 50000, 5, '2021-04-18', 'brokoli.jpg');
 
 -- --------------------------------------------------------
 
@@ -266,13 +276,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_produk`
