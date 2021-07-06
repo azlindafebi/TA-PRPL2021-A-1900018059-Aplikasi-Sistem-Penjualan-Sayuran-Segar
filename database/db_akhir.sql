@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jul 2021 pada 19.05
--- Versi server: 10.1.34-MariaDB
--- Versi PHP: 7.2.7
+-- Waktu pembuatan: 06 Jul 2021 pada 13.39
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,7 +91,10 @@ INSERT INTO `tb_detail_order` (`id_detail`, `id_order`, `id_produk`, `pembelian`
 (25, 61, 12, 1, ''),
 (26, 61, 13, 2, ''),
 (27, 62, 14, 2, ''),
-(28, 62, 17, 2, '');
+(28, 62, 17, 2, ''),
+(29, 63, 12, 1, ''),
+(30, 63, 14, 1, ''),
+(31, 64, 12, 1, '');
 
 -- --------------------------------------------------------
 
@@ -129,7 +132,7 @@ CREATE TABLE `tb_order` (
   `total_item` int(11) NOT NULL,
   `total_bayar` float NOT NULL,
   `tgl_transaksi` date NOT NULL,
-  `status` int(100) NOT NULL DEFAULT '0'
+  `status` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -137,15 +140,7 @@ CREATE TABLE `tb_order` (
 --
 
 INSERT INTO `tb_order` (`id_order`, `total_item`, `total_bayar`, `tgl_transaksi`, `status`) VALUES
-(54, 2, 110000, '2021-01-21', 0),
-(55, 1, 55000, '2021-04-16', 0),
-(56, 1, 55000, '2021-04-17', 0),
-(57, 1, 55000, '2021-04-17', 0),
-(58, 1, 55000, '2021-04-17', 0),
-(59, 1, 55000, '2021-04-17', 0),
-(60, 4, 410000, '2021-07-05', 0),
-(61, 3, 355000, '2021-07-05', 0),
-(62, 4, 600000, '2021-07-05', 0);
+(64, 1, 55000, '2021-07-05', 'confirmed');
 
 -- --------------------------------------------------------
 
@@ -167,11 +162,12 @@ CREATE TABLE `tb_produk` (
 --
 
 INSERT INTO `tb_produk` (`id`, `nama_barang`, `harga`, `stok`, `tanggal`, `gambar`) VALUES
-(12, 'Sayur Kangkung', 55000, 10, '2021-01-22', 'kangkung.jpg'),
-(13, 'Ikan Lele', 150000, 5, '2021-01-21', 'lele.jpg'),
-(14, 'Daging Sapi', 250000, 5, '2021-01-19', 'daging.jpg'),
-(15, 'Beras', 400000, 20, '2021-01-18', 'beras.jpg'),
-(17, 'Brokoli', 50000, 5, '2021-04-18', 'brokoli.jpg');
+(12, 'Sayur Kangkung', 10000, 10, '2021-01-22', 'kangkung.jpg'),
+(13, 'Ikan Lele', 25000, 5, '2021-01-21', 'lele.jpg'),
+(14, 'Daging Sapi', 50000, 5, '2021-01-19', 'daging.jpg'),
+(15, 'Beras', 20000, 20, '2021-01-18', 'beras.jpg'),
+(17, 'Brokoli', 10000, 5, '2021-04-18', 'brokoli.jpg'),
+(18, 'Terong', 7000, 20, '2021-07-06', 'terong.jpg');
 
 -- --------------------------------------------------------
 
@@ -276,19 +272,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_produk`
 --
 ALTER TABLE `tb_produk`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_transaksi`
