@@ -17,7 +17,7 @@ for ($i=0; $i<count($cart); $i++) {
 }
 
 // proses penyimpanan data
-$query = mysqli_query($conn, "INSERT INTO tb_order (total_item, total_bayar, tgl_transaksi) VALUES ('$total_item', '$total_bayar', '" . date('Y-m-d') . "')");
+$query = mysqli_query($conn, "INSERT INTO tb_order (total_item, total_bayar, tgl_transaksi,status) VALUES ('$total_item', '$total_bayar', '" . date('Y-m-d') . "','pending')");
 
 $id_order = mysqli_insert_id($conn);
 

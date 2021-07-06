@@ -79,7 +79,7 @@ include_once("koneksi.php");
 						<center>Stock</center>
 					</th>
 					<th>
-						<center>Total Harga</center>
+						<center>Harga</center>
 					</th>
 					<th>
 						<center>Aksi</center>

@@ -79,6 +79,7 @@ if (isset($_SESSION['pesan'])) {
         <th scope="col">#</th>
         <th scope="col">Nama Produk</th>
         <th scope="col">Gambar</th>
+        <th scope="col">Harga</th>
         <th scope="col">Stok</th>
         <th scope="col">Pembelian</th>
         <th scope="col">Aksi</th>

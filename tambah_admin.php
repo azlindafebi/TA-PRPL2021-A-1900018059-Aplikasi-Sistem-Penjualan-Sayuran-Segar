@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">TANGGAL TRANSAKSI</label>
+                <label class="col-sm-2 col-form-label">TANGGAL </label>
                 <div class="col-sm-10">
                     <input type="date" name="tanggal" class="form-control" size="4" placeholder="Tanggal" required="required">
                 </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">TOTAL HARGA</label>
+                <label class="col-sm-2 col-form-label">HARGA</label>
                 <div class="col-sm-10">
                     <input type="numeric" name="harga" class="form-control" size="4" placeholder="Rp." required="required">
                 </div>
